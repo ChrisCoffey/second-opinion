@@ -15,7 +15,6 @@ toLowerNoParens= (str) ->
 	str.replace(/(\(.+?\))*/gim, '').trim().toLowerCase()
 
 isMatch = (l, r) ->
-	console.log "#{l}|#{r}"
 	prepared = (str) ->
 		toLowerNoParens(str).replace(/[-'*]*/gim, "").replace(/restraunt/g, "").trim()
 	levenshtein.getEditDistance(prepared(l), prepared(r)) < max_discrepancy
@@ -54,11 +53,9 @@ svc.get '/', (req, resp) ->
 		term: searchTerm
 		limit: 10
 
-	console.log params
 
 	yelp.search params, (error, data) ->
 		if error
-			console.log error
 			resp.send(toError error)
 			return
 
@@ -79,7 +76,7 @@ svc.get '/', (req, resp) ->
 		resp.send(result)		
 
 console.log "opening port"
-port = process.env.SVCPORT || 8080
+port = process.env.PORT || 8080
 svc.listen port, ->
 	console.log 'started up!!!'
 

@@ -25,7 +25,6 @@
 
   isMatch = function(l, r) {
     var prepared;
-    console.log("" + l + "|" + r);
     prepared = function(str) {
       return toLowerNoParens(str).replace(/[-'*]*/gim, "").replace(/restraunt/g, "").trim();
     };
@@ -69,11 +68,9 @@
       term: searchTerm,
       limit: 10
     };
-    console.log(params);
     return yelp.search(params, function(error, data) {
       var business, clip, matches, result;
       if (error) {
-        console.log(error);
         resp.send(toError(error));
         return;
       }
