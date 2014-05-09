@@ -14,7 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.1.2",
-    "logfmt": "^1.1.2",
+    "coffee-script": "*",
     "yelp": "^0.1.1"
   }
 }

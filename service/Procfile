@@ -1,1 +1,1 @@
-web: node yelpSearch.js
+web: coffee yelpSearch.coffee
