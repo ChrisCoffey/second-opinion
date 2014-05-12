@@ -38,7 +38,7 @@
   search = function(business, location, div) {
     var req;
     req = new XMLHttpRequest;
-    req.open("GET", "http://localhost:8080/?s=" + business + "&l=" + location, true);
+    req.open("GET", "http://second-opinion.herokuapp.com/?s=" + business + "&l=" + location, true);
     req.onreadystatechange = function() {
       var failure, ratings, res;
       if (req.readyState === 4) {

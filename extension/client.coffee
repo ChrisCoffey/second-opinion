@@ -19,8 +19,8 @@ extractRatings = (rating, reviewCount, starsUrl, bizUrl) ->
 
 search = (business, location, div) ->
 	req = new XMLHttpRequest
-	#req.open "GET", "https://second-opinion.herokuapp.com:8080/?s=#{business}&l=#{location}", true
-	req.open "GET", "http://localhost:8080/?s=#{business}&l=#{location}", true
+	req.open "GET", "http://second-opinion.herokuapp.com/?s=#{business}&l=#{location}", true
+	#req.open "GET", "http://localhost:8080/?s=#{business}&l=#{location}", true
 	req.onreadystatechange = ->
 		if req.readyState is 4
 			res = $.parseJSON req.responseText

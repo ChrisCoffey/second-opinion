@@ -2,10 +2,10 @@ express = require 'express'
 levenshtein = require './levenshtein.js'
 svc = express()
 yelp = require('yelp').createClient({
-	consumer_key : 'fnAIzIA5cLF6NSl_Lr7Hbw'#process.env.YELP_CONSUMER_KEY,
-	consumer_secret : '-lbNbJtdQJLIqW7AtV1xUfP5tBY'#process.env.YELP_CON_SECRET,
-	token : 'SkTYgQkbdmG6zgWIMqWpMHgiA-sudkEn'#process.env.YELP_TOKEN
-	token_secret : '8actk2saU1JKQ2MfjDceow_Jzuw'#process.env.YELP_TOKEN_SECRET
+	consumer_key : process.env.YELP_CONSUMER_KEY,
+	consumer_secret : process.env.YELP_CON_SECRET,
+	token : process.env.YELP_TOKEN
+	token_secret : process.env.YELP_TOKEN_SECRET
 	})
 
 console.log "created clients"
